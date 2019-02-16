@@ -5,6 +5,7 @@
 #include <random>
 #include <vector>
 #include <algorithm>
+#include <cfloat>
 
 using std::cin;
 using std::string;
