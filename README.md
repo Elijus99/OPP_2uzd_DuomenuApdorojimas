@@ -15,7 +15,7 @@ Rimas       Kurtinaitis  y.yy               y.yy
 ...
 ```
 
-## Įdiegimas (Unix kompiuteryje) naudojant ``kompiliatorių 
+## Įdiegimas (Unix kompiuteryje) naudojant `Clang` kompiliatorių 
 
 - `git clone https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas.git`
 - `cd OPP_2uzd_DuomenuApdorojimas`
