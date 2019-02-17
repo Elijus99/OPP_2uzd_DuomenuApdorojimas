@@ -24,10 +24,10 @@ struct stud {
 };
 
 void ivedimas(char &GType, std::vector<stud> &ls, int &VSize, int &PSize);
-void rikiavimas(std::vector<int> x[], int n);
 double galutinis(double egzaminas, char GType, int n, std::vector<int> nd);
 void isvedimas(std::vector<stud> ls, int VSize, int PSize, char GType);
 bool exist(const char *fileName);
+bool compareAlphabet(const stud& a, const stud& b) {return a.vard < b.vard;}
 
 int main()
 {
@@ -35,24 +35,11 @@ int main()
 	char GType{};
 	std::vector<stud> ls;
 	ivedimas(GType, ls, VSize, PSize);
+	std::sort(ls.begin(), ls.end(), compareAlphabet);
 	isvedimas(ls, VSize, PSize, GType);
 	system("pause");
 	return 0;
 }
-
-void rikiavimas(std::vector<int> x[], int n)
-{
-	for (int i = 0; i < n - 1; i++)
-	{
-		for (int j = i; j < n; j++)
-		{
-			if (x[j] < x[i]) {
-				std::swap(x[i], x[j]);
-			}
-		}
-	}
-}
-
 
 void ivedimas(char &GType, std::vector<stud> &ls, int &VSize, int &PSize)
 {
