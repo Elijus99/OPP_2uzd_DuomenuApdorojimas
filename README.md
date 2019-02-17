@@ -29,7 +29,7 @@ Rimas       Kurtinaitis  y.yy               y.yy
 **Pridėta**
 
 - Duomenų nuskaitymas iš "kursiokai.txt" failo
-- Studentų sąrašas rikiuojamas abėcėlės tvarka
+- Studentų sąrašas rikiuojamas abėcėlės tvarka (Norint, kad programa rikiuotų tvarkingai, vardai turi prasidėti iš didžiosios raidės)
 
 **Koreguota**
 
