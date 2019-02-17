@@ -24,6 +24,17 @@ Rimas       Kurtinaitis  y.yy               y.yy
 
 ## Versijų istorija (changelog)
 
+### [v0.2](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.2) - (2019-02-17)
+
+**Pridėta**
+
+- Duomenų nuskaitymas iš "kursiokai.txt" failo
+- Studentų sąrašas rikiuojamas abėcėlės tvarka
+
+**Koreguota**
+
+- Papildytas **README** failas
+
 ### [v0.1](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.1) - (2019-02-16)
 
 **Pridėta**
