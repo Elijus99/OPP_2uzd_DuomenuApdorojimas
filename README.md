@@ -24,6 +24,14 @@ Rimas       Kurtinaitis  y.yy               y.yy
 
 ## Versijų istorija (changelog)
 
+### [v0.3](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.3) - (2019-02-22)
+
+**Koreguota**
+
+- Atliktas kodo refactoring'as (sukurti failai functions.cpp, functions.h, libraries.h, į juos perkelta atitinkamos kodo dalys)
+- Panaudotas Exception Handling'as
+- Papildytas **README** failas
+
 ### [v0.2](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.2) - (2019-02-17)
 
 **Pridėta**
