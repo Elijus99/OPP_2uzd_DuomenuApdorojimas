@@ -1,9 +1,9 @@
 CXX = clang++
 CC = clang
 
-all:	main
-
-test:	all
+main:	functions.o
+	clang++ -o main main.cpp functions.o
+test:	main
 	./main
 
 clean:
