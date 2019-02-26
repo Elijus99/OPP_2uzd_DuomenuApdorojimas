@@ -23,6 +23,34 @@ void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize)
 			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 	} while (GType != "v" || GType != "V" || GType != "M" || GType != "m");
+	string choose;
+	int chooseN;
+	do {
+		cout << "Ar norite sugeneruoti studentu saraso faila ? (y/n)" << endl;
+		cin >> choose;
+		if (choose == "y" || choose == "Y" || choose == "N" || choose == "n") {
+			break;
+		}
+		else {
+			cout << "That input is invalid!" << endl;
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+	} while (choose != "y" || choose != "Y" || choose != "N" || choose != "n");
+	if (choose == "y" || choose == "Y") {
+		do {
+			cout << "Kiek irasu faile norite generuoti? " << endl;
+			cin >> chooseN;
+			if (!(valid_input = cin.good())) {
+				cout << "That input is invalid!" << endl;
+				cin.clear();
+				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			}
+		} while (!valid_input);
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		string name = "StudentList" + std::to_string(chooseN) + ".txt";
+		generate(100000, "StudentList100000.txt", GType, ls);
+	}
 
 	do {
 		cout << "Ar norite nuskaityti duomenis is failo 'kursiokai.txt'? (y/n)" << endl;
@@ -63,7 +91,7 @@ void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize)
 				gal = galutinis(egzaminas, GType, n, nd);
 				ls.push_back({ vard, pav, n, nd, gal });
 			}
-			cout << "---Is failo nuskaityti " << ls.size() << " studentu duomenys---" << endl;
+			cout << "---Duomenys nuskaityti!---" << endl;
 		}
 		else {
 			cout << "---Failas 'kursiokai.txt' nebuvo rastas---" << endl;
@@ -81,12 +109,9 @@ void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize)
 	} while (!valid_input);
 	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-	double egzaminas;
+	int egzaminas;
 	int j, temp;
 	int SIZE = ls.size();
-	std::random_device rd;
-	std::mt19937 mt(rd());
-	std::uniform_int_distribution <int> gen(1, std::nextafter(10, DBL_MAX));
 	for (int i = SIZE; i < (N + SIZE); i++)
 	{
 		ls.push_back(stud());
@@ -171,10 +196,10 @@ void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize)
 			cout << "Sugeneruoti pazymiai: ";
 			for (int j = 0; j < ls[i].n; j++)
 			{
-				(ls[i].nd).push_back(gen(mt));
+				(ls[i].nd).push_back(RandomNumber());
 				cout << ls[i].nd[j] << " ";
 			}
-			egzaminas = gen(mt);
+			egzaminas = RandomNumber();
 			cout << endl;
 			cout << "Egzamino rezultatas: " << egzaminas;
 			cout << endl;
@@ -185,7 +210,7 @@ void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize)
 	}
 }
 
-double galutinis(double egzaminas, string GType, int n, std::vector<int> nd)
+double galutinis(int egzaminas, string GType, int n, std::vector<int> nd)
 {
 	double vidurkis = 0;
 	for (int j = 0; j < n; j++)
@@ -241,7 +266,7 @@ void isvedimas(std::vector<stud> ls, int VSize, int PSize, string GType)
 	cout << endl;
 	for (int i = 0; i < ls.size(); i++)
 	{
-		cout << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << setprecision(3) << ls[i].galutinis << endl;
+		cout << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
 	}
 }
 bool exist(const char *fileName)
@@ -259,4 +284,104 @@ double division(int a, int b)
 		return 0;
 	}
 	return ((double)a / b);
+}
+int RandomNumber()
+{
+	std::random_device rd;
+	std::mt19937 mt(rd());
+	std::uniform_int_distribution <int> gen(1, std::nextafter(10, DBL_MAX));
+	return gen(mt);
+}
+
+void generate(int n, string OutputFileName, string GType, std::vector<stud> &ls)
+{
+	int egzaminas;
+	stud student;
+	std::ofstream out(OutputFileName);
+	if (GType == "V" || GType == "v") {
+		out << "Vardas          " << "Pavarde          " << "ND1   " << "ND2   " << "ND3   " << "ND4   " << "ND5   " << "Galutinis (Vid.)" << endl;
+	}
+	else {
+		out << "Vardas          " << "Pavarde          " << "ND1   " << "ND2   " << "ND3   " << "ND4   " << "ND5   " << "Galutinis (Med.)" << endl;
+	}
+	out << endl;
+	for (int i = 0; i < n; i++)
+	{
+		student.vard = "Vardas" + std::to_string(i + 1);
+		student.pav = "Pavarde" + std::to_string(i + 1);
+		for (int j = 0; j < 5; j++)
+		{
+			(student.nd).push_back(RandomNumber());
+		}
+		egzaminas = RandomNumber();
+		student.galutinis = galutinis(egzaminas, GType, 5, student.nd);
+		ls.push_back(student);
+		out << std::left << setw(16) << student.vard << std::left << setw(17) << student.pav << std::left << setw(6) << student.nd[0] << std::left << setw(6) << student.nd[1] << std::left << setw(6) << student.nd[2] << std::left << setw(6) << student.nd[3] << std::left << setw(6) << student.nd[4] << std::fixed << setprecision(2) << student.galutinis << endl;
+		(student.nd).clear();
+	}
+}
+void SortToGroups(std::vector<stud> &ls)
+{
+	for (int i = 0; i < ls.size(); i++)
+	{
+		if (ls[i].galutinis >= 5.0) {
+			ls[i].group = "kietiakas";
+		}
+		else {
+			ls[i].group = "vargsiukas";
+		}
+	}
+}
+void OutputToFiles(std::vector<stud> &ls, string GType, int VSize, int PSize)
+{
+	std::ofstream outToK("kietiakai.txt");
+	std::ofstream outToV("vargsiukai.txt");
+	outToK << "Vardas";
+	outToV << "Vardas";
+	for (int i = 0; i < VSize; i++)
+	{
+		outToK << " ";
+		outToV << " ";
+	}
+	outToK << "Pavarde";
+	outToV << "Pavarde";
+	for (int i = 0; i < PSize; i++)
+	{
+		outToK << " ";
+		outToV << " ";
+	}
+	if (GType == "V" || GType == "v") {
+		outToK << "Galutinis (Vid.)" << endl;
+		outToV << "Galutinis (Vid.)" << endl;
+	}
+	else {
+		outToK << "Galutinis (Med.)" << endl;
+		outToV << "Galutinis (Med.)" << endl;
+	}
+	for (int i = 0; i < PSize + VSize + 29; i++)
+	{
+		outToK << "-";
+		outToV << "-";
+	}
+	outToK << endl;
+	outToV << endl;
+	for (int i = 0; i < ls.size(); i++)
+	{
+		if (GType == "V" || GType == "v") {
+			if (ls[i].group == "kietiakas") {
+				outToK << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
+			}
+			else if (ls[i].group == "vargsiukas") {
+				outToV << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
+			}
+		}
+		else {				
+			if (ls[i].group == "kietiakas") {
+				outToK << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
+			}
+			else if (ls[i].group == "vargsiukas") {
+				outToV << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
+			}
+		}
+	}
 }
