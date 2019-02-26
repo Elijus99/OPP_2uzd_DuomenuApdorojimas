@@ -22,7 +22,31 @@ Rimas       Kurtinaitis  y.yy               y.yy
 - `make`
 - `make test`
 
+## Spartos analizė [v0.4]
+
+```
+Faile generuojamų įrašų kiekis      Programos veikimo laikas       Programos veikimo laikas(su vardų rikiavimu pagal abėcėlę)
+
+10                                  0.0316s                        0.0341s
+100                                 0.0553s                        0.0564s
+1000                                0.2603s                        0.3338s
+10000                               2.0908s                        3.0262s
+100000                             19.4860s                       31.4563s
+```
+
 ## Versijų istorija (changelog)
+
+### [v0.4](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.4) - (2019-02-26)
+
+**Pridėta**
+
+- Studentų sąrašų failų generavimas
+- Studentų rūšiavimas į "vargšiukus" (galutinis balas < 5.0) ir "kietiakus" (galutinis balas >= 5.0) ir jų išvedimas į atskirus failus
+- Programos spartos analizė
+
+**Koreguota**
+
+- Papildytas **README** failas
 
 ### [v0.3](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.3) - (2019-02-22)
 
