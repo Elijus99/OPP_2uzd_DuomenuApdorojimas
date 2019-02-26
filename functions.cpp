@@ -49,7 +49,7 @@ void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize)
 		} while (!valid_input);
 		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		string name = "StudentList" + std::to_string(chooseN) + ".txt";
-		generate(100000, "StudentList100000.txt", GType, ls);
+		generate(chooseN, name, GType, ls);
 	}
 
 	do {
