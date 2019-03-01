@@ -12,15 +12,16 @@ struct stud {
 	string group;
 };
 
-void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize);
+void ivedimas(string &GType, std::deque<stud> &ls, int &VSize, int &PSize);
 double galutinis(int egzaminas, string GType, int n, std::vector<int> nd);
-void isvedimas(std::vector<stud> ls, int VSize, int PSize, string GType);
-bool exist(const char *fileName);
+void isvedimas(std::deque<stud> ls, int VSize, int PSize, string GType);
+bool exist(string fileName);
 bool compareAlphabet(const stud& a, const stud& b);
 double division(int a, int b);
 int RandomNumber();
-void generate(int n, string OutputFileName, string GType, std::vector<stud> &ls);
-void SortToGroups(std::vector<stud> &ls);
-void OutputToFiles(std::vector<stud> &ls, string GType, int VSize, int PSize);
+void generate(int n, string OutputFileName, string GType, std::deque<stud> &ls);
+void SortToGroups(std::deque<stud> &ls);
+void InputFromFiles(string choice, string fileName, int &VSize, int &PSize, std::deque<stud> &ls, string GType);
+void OutputToFiles(std::deque<stud> &ls, string GType, int VSize, int PSize);
 
 #endif

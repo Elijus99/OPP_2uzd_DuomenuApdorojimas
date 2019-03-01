@@ -6,7 +6,7 @@
 #include <cfloat>
 #include <fstream>
 
-void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize)
+void ivedimas(string &GType, std::deque<stud> &ls, int &VSize, int &PSize)
 {
 	bool valid_input = false;
 	int N;
@@ -64,40 +64,10 @@ void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize)
 			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 	} while (choice != "y" || choice != "Y" || choice != "N" || choice != "n");
-	const char *fileName = "kursiokai.txt";
+	string fileName = "kursiokai.txt";
 	if (choice == "y" || choice == "Y") {
-		if (exist(fileName)) {
-			std::ifstream in(fileName);
-			in.ignore(10000, '\n');
-			string vard, pav;
-			std::vector<int> nd;
-			double egzaminas, gal;
-			int n = 5, j = 0;
-			int temp;
-			while (in >> vard >> pav) {
-				if (VSize < vard.size()) {
-					VSize = vard.size();
-				}
-				if (PSize < pav.size()) {
-					PSize = pav.size();
-				}
-				nd.clear();
-				for (int i = 0; i < n; i++)
-				{
-					in >> temp;
-					nd.push_back(temp);
-				}
-				in >> egzaminas;
-				gal = galutinis(egzaminas, GType, n, nd);
-				ls.push_back({ vard, pav, n, nd, gal });
-			}
-			cout << "---Duomenys nuskaityti!---" << endl;
-		}
-		else {
-			cout << "---Failas 'kursiokai.txt' nebuvo rastas---" << endl;
-		}
+		InputFromFiles(choice, fileName, VSize, PSize, ls, GType);
 	}
-
 	do {
 		cout << "Keliu studentu duomenis norite irasyti?" << endl;
 		cin >> N;
@@ -241,7 +211,7 @@ double galutinis(int egzaminas, string GType, int n, std::vector<int> nd)
 	return galutinis;
 }
 
-void isvedimas(std::vector<stud> ls, int VSize, int PSize, string GType)
+void isvedimas(std::deque<stud> ls, int VSize, int PSize, string GType)
 {
 	cout << "Vardas";
 	for (int i = 0; i < VSize; i++)
@@ -269,7 +239,7 @@ void isvedimas(std::vector<stud> ls, int VSize, int PSize, string GType)
 		cout << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
 	}
 }
-bool exist(const char *fileName)
+bool exist(string fileName)
 {
 	std::ifstream infile(fileName);
 	return infile.good();
@@ -293,7 +263,7 @@ int RandomNumber()
 	return gen(mt);
 }
 
-void generate(int n, string OutputFileName, string GType, std::vector<stud> &ls)
+void generate(int n, string OutputFileName, string GType, std::deque<stud> &ls)
 {
 	int egzaminas;
 	stud student;
@@ -320,7 +290,7 @@ void generate(int n, string OutputFileName, string GType, std::vector<stud> &ls)
 		(student.nd).clear();
 	}
 }
-void SortToGroups(std::vector<stud> &ls)
+void SortToGroups(std::deque<stud> &ls)
 {
 	for (int i = 0; i < ls.size(); i++)
 	{
@@ -332,7 +302,40 @@ void SortToGroups(std::vector<stud> &ls)
 		}
 	}
 }
-void OutputToFiles(std::vector<stud> &ls, string GType, int VSize, int PSize)
+void InputFromFiles(string choice, string fileName, int &VSize, int &PSize, std::deque<stud> &ls, string GType)
+{
+		if (exist(fileName)) {
+			std::ifstream in(fileName);
+			in.ignore(10000, '\n');
+			string vard, pav;
+			std::vector<int> nd;
+			double egzaminas, gal;
+			int n = 5, j = 0;
+			int temp;
+			while (in >> vard >> pav) {
+				if (VSize < vard.size()) {
+					VSize = vard.size();
+				}
+				if (PSize < pav.size()) {
+					PSize = pav.size();
+				}
+				nd.clear();
+				for (int i = 0; i < n; i++)
+				{
+					in >> temp;
+					nd.push_back(temp);
+				}
+				in >> egzaminas;
+				gal = galutinis(egzaminas, GType, n, nd);
+				ls.push_back({ vard, pav, n, nd, gal });
+			}
+			cout << "---Duomenys nuskaityti!---" << endl;
+		}
+		else {
+			cout << "---Failas 'kursiokai.txt' nebuvo rastas---" << endl;
+		}
+}
+void OutputToFiles(std::deque<stud> &ls, string GType, int VSize, int PSize)
 {
 	std::ofstream outToK("kietiakai.txt");
 	std::ofstream outToV("vargsiukai.txt");

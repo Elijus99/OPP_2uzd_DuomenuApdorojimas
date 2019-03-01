@@ -5,6 +5,7 @@
 #include <vector>
 #include <iomanip>
 #include <string>
+#include <deque>
 using std::cin;
 using std::string;
 using std::endl;

@@ -7,8 +7,8 @@ int main()
 {
 	auto start = std::chrono::high_resolution_clock::now();
 	int VSize = 10, PSize = 10;
-	string GType{"v"};
-	std::vector<stud> ls;
+	string GType{};
+	std::deque<stud> ls;
 	ivedimas(GType, ls, VSize, PSize);
 	SortToGroups(ls);
 	std::sort(ls.begin(), ls.end(), compareAlphabet);
