@@ -34,7 +34,26 @@ Faile generuojamų įrašų kiekis      Programos veikimo laikas       Programos
 100000                             19.4860s                       31.4563s
 ```
 
+## Konteinerių spartos analizė [v0.5]
+
+```
+Naudojamų įrašų keikis      Vector            List              Deque
+
+10                          0.0063s           0.0057s           0.0062s
+100                         0.0182s           0.0146s           0.0155s
+1000                        0.1365s           0.1147s           0.1328s
+10000                       1.3200s           1.0791s           1.1157s
+100000                     12.4403s           9.4744s           9.6988s
+```
+
 ## Versijų istorija (changelog)
+
+### [v0.5](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.5) - (2019-03-01)
+
+**Koreguota**
+
+- `std::vector<stud>` pakeistas į `std::deque<stud>` dėl didesnės spartos
+- Papildytas **README** failas
 
 ### [v0.4](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.4) - (2019-02-26)
 
