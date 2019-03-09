@@ -22,6 +22,15 @@ Rimas       Kurtinaitis  y.yy               y.yy
 - `make`
 - `make test`
 
+## Naudojimosi instrukcija
+
+- Paleisti programą.
+- Pasirinkti ką naudosite galutinio balo skaičiavimui, namų darbų vidurkį ar medianą (Įvesti "v" arba "m").
+- Jei norite sugeneruoti studentų sąrašą įveskite "y", jei nenorite - "n". Pasirinkus "y", įveskite kiek įrašų sąraše norite generuoti.
+- Jei norite nuskaityti duomenis iš failo "kursiokai.txt" įveskite "y", jei nenorite - "n".
+- Įveskite skaičių studentų, kurių duomenis norite įrašyti.
+- Jei studentų skaičių pasirinkote didesnį, nei 0, įveskite 1-0 studento vardą, pavardę. Jei norite studento namų darbų pažymius bei egzamino rezultatą įrašyti pats/pati įveskite "i". Jei norite juos sugeneruoti automatiškai įveskite "g". Pasirinkus "i" įveskite studento namų darbų pažymius, kai norėsite sustabdyti šio studento pažymių vedimą įveskite "-1". Tada įveskite egzamino rezultatą. Pakartokite šiuos žingsnius visų studentų duomenims įvesti.
+
 ## Spartos analizė [v0.4]
 
 ```
