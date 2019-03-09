@@ -7,13 +7,13 @@ int main()
 {
 	auto start = std::chrono::high_resolution_clock::now();
 	int VSize = 10, PSize = 10;
-	string GType{};
-	std::deque<stud> ls;
+	string GType{"v"};
+	std::deque<stud> ls, vargs;
 	ivedimas(GType, ls, VSize, PSize);
-	SortToGroups(ls);
 	std::sort(ls.begin(), ls.end(), compareAlphabet);
 	isvedimas(ls, VSize, PSize, GType);
-	OutputToFiles(ls, GType, VSize, PSize);
+	SortToGroups(ls, vargs);
+	OutputToFiles(ls, vargs, GType, VSize, PSize);
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> diff = end - start;
 	std::cout << "Programos veikimas uztruko: " << diff.count() << " s" << endl;

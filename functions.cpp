@@ -66,7 +66,7 @@ void ivedimas(string &GType, std::deque<stud> &ls, int &VSize, int &PSize)
 	} while (choice != "y" || choice != "Y" || choice != "N" || choice != "n");
 	string fileName = "kursiokai.txt";
 	if (choice == "y" || choice == "Y") {
-		InputFromFiles(choice, fileName, VSize, PSize, ls, GType);
+		InputFromFiles(fileName, VSize, PSize, ls, GType);
 	}
 	do {
 		cout << "Keliu studentu duomenis norite irasyti?" << endl;
@@ -290,19 +290,21 @@ void generate(int n, string OutputFileName, string GType, std::deque<stud> &ls)
 		(student.nd).clear();
 	}
 }
-void SortToGroups(std::deque<stud> &ls)
+void SortToGroups(std::deque<stud> &ls, std::deque<stud> &vargs)
 {
 	for (int i = 0; i < ls.size(); i++)
 	{
-		if (ls[i].galutinis >= 5.0) {
-			ls[i].group = "kietiakas";
-		}
-		else {
-			ls[i].group = "vargsiukas";
+		if (ls[i].galutinis < 5.0) {
+			vargs.push_back(ls[i]);
 		}
 	}
+	ls.erase(std::remove_if(
+		ls.begin(), ls.end(),
+		[](stud x) {
+		return x.galutinis < 5.0;
+	}), ls.end());
 }
-void InputFromFiles(string choice, string fileName, int &VSize, int &PSize, std::deque<stud> &ls, string GType)
+void InputFromFiles(string fileName, int &VSize, int &PSize, std::deque<stud> &ls, string GType)
 {
 		if (exist(fileName)) {
 			std::ifstream in(fileName);
@@ -335,7 +337,7 @@ void InputFromFiles(string choice, string fileName, int &VSize, int &PSize, std:
 			cout << "---Failas 'kursiokai.txt' nebuvo rastas---" << endl;
 		}
 }
-void OutputToFiles(std::deque<stud> &ls, string GType, int VSize, int PSize)
+void OutputToFiles(std::deque<stud> &ls, std::deque<stud> vargs, string GType, int VSize, int PSize)
 {
 	std::ofstream outToK("kietiakai.txt");
 	std::ofstream outToV("vargsiukai.txt");
@@ -368,23 +370,12 @@ void OutputToFiles(std::deque<stud> &ls, string GType, int VSize, int PSize)
 	}
 	outToK << endl;
 	outToV << endl;
+	for (int i = 0; i < vargs.size(); i++)
+	{
+		outToV << std::left << setw(VSize + 6) << vargs[i].vard << setw(PSize + 7) << vargs[i].pav << std::fixed << setprecision(2) << vargs[i].galutinis << endl;
+	}
 	for (int i = 0; i < ls.size(); i++)
 	{
-		if (GType == "V" || GType == "v") {
-			if (ls[i].group == "kietiakas") {
-				outToK << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
-			}
-			else if (ls[i].group == "vargsiukas") {
-				outToV << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
-			}
-		}
-		else {				
-			if (ls[i].group == "kietiakas") {
-				outToK << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
-			}
-			else if (ls[i].group == "vargsiukas") {
-				outToV << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
-			}
-		}
+		outToK << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
 	}
 }
