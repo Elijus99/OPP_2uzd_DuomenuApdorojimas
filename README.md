@@ -100,6 +100,18 @@ Naudojamų įrašų kiekis      Be algoritmų       Su algoritmais
 
 ## Versijų istorija (changelog)
 
+### [Papildoma uzduotis](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.4p) - (2019-03-09)
+
+**Pridėta** 
+
+- Sukurta funkcija raskMinkstus().
+- Funkcija raskMinkstus() modifikuota, pakeistas pavadinimas į iterpkKietus().
+- Atlikta funkcijų raskMinkstus() ir iterpkKietus() spartos analizė.
+
+**Koreguota**
+
+- Papildytas **README** failas
+
 ### [v1.0](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v1.0) - (2019-03-09)
 
 **Pridėta**
