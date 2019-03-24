@@ -98,6 +98,15 @@ Naudojamų įrašų kiekis      Be algoritmų       Su algoritmais
 
 - Skiltyje "Su algoritmais" nurodyta programos sparta pritaikius `std::remove_if` algoritmą.
 
+## iterpkKietus() ir raskMinkstus() funkcijų spartos analizė [Papildoma uzduotis]
+
+```
+Naudojamų įrašų kiekis    raskMinkstus()                iterpKietus()             std::Vector pakeistas į std::deque
+
+10000                      63.8158s                     225.0824s                 0.2359s
+100000                   6345.6480s (1h 45 min)         >5h (18000s)              2.3369s
+```
+
 ## Versijų istorija (changelog)
 
 ### [Papildoma uzduotis](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.4p) - (2019-03-24)
