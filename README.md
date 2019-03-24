@@ -100,7 +100,7 @@ Naudojamų įrašų kiekis      Be algoritmų       Su algoritmais
 
 ## Versijų istorija (changelog)
 
-### [Papildoma uzduotis](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.4p) - (2019-03-09)
+### [Papildoma uzduotis](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.4p) - (2019-03-24)
 
 **Pridėta** 
 
