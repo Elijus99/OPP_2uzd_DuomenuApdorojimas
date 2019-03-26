@@ -34,13 +34,13 @@ Rimas       Kurtinaitis  y.yy               y.yy
 ## Spartos analizė [v0.4]
 
 ```
-Faile generuojamų įrašų kiekis      Programos veikimo laikas       Programos veikimo laikas(su vardų rikiavimu pagal abėcėlę)
+Faile generuojamų įrašų kiekis      Programos veikimo laikas
 
-10                                  0.0316s                        0.0341s
-100                                 0.0553s                        0.0564s
-1000                                0.2603s                        0.3338s
-10000                               2.0908s                        3.0262s
-100000                             19.4860s                       31.4563s
+10                                  0.0072s
+100                                 0.0089s
+1000                                0.0159s
+10000                               0.0748s
+100000                              0.6115s
 ```
 
 ## Konteinerių spartos analizė [v0.5]
@@ -103,8 +103,8 @@ Naudojamų įrašų kiekis      Be algoritmų       Su algoritmais
 ```
 Naudojamų įrašų kiekis    raskMinkstus()                iterpKietus()            std::Vector pakeistas į std::deque
 
-10000                      0.9020s                       3.8906s                 0.0119s
-100000                    97.4003s                     388.7256s                 0.1677s
+10000                      0.5386s                       1.9865s                 0.0059s
+100000                    54.5750s                     194.5236s                 0.0454s
 ```
 
 ## Versijų istorija (changelog)
