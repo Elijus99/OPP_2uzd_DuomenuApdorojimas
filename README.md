@@ -103,8 +103,8 @@ Naudojamų įrašų kiekis      Be algoritmų       Su algoritmais
 ```
 Naudojamų įrašų kiekis    raskMinkstus()                iterpKietus()             std::Vector pakeistas į std::deque
 
-10000                      63.8158s                     225.0824s                 0.2359s
-100000                   6345.6480s (1h 45 min)         >5h (18000s)              2.3369s
+10000                      63.8158s                     225.0824s                 0.0119s
+100000                   6345.6480s (1h 45 min)         >5h (18000s)              0.1677s
 ```
 
 ## Versijų istorija (changelog)
