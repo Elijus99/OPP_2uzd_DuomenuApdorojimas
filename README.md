@@ -101,10 +101,10 @@ Naudojamų įrašų kiekis      Be algoritmų       Su algoritmais
 ## iterpkKietus() ir raskMinkstus() funkcijų spartos analizė [Papildoma uzduotis]
 
 ```
-Naudojamų įrašų kiekis    raskMinkstus()                iterpKietus()             std::Vector pakeistas į std::deque
+Naudojamų įrašų kiekis    raskMinkstus()                iterpKietus()            std::Vector pakeistas į std::deque
 
-10000                      63.8158s                     225.0824s                 0.0119s
-100000                   6345.6480s (1h 45 min)         >5h (18000s)              0.1677s
+10000                      0.9020s                       3.8906s                 0.0119s
+100000                    97.4003s                     388.7256s                 0.1677s
 ```
 
 ## Versijų istorija (changelog)
