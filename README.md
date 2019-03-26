@@ -48,11 +48,11 @@ Faile generuojamų įrašų kiekis      Programos veikimo laikas
 ```
 Naudojamų įrašų kiekis      Vector            List              Deque
 
-10                          0.0063s           0.0057s           0.0062s
-100                         0.0182s           0.0146s           0.0155s
-1000                        0.1365s           0.1147s           0.1328s
-10000                       1.3200s           1.0791s           1.1157s
-100000                     12.4403s           9.4744s           9.6988s
+10                          0.0043s           0.0041s           0.0042s
+100                         0.0053s           0.0045s           0.0052s
+1000                        0.0184s           0.0068s           0.0201s
+10000                       0.0995s           0.0257s           0.1012s
+100000                      0.8452s           0.2208s           0.8569s
 ```
 
 ## Konteinerių spartos analizė [v1.0]
