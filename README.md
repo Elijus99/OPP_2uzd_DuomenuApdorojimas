@@ -64,11 +64,11 @@ Versijose v0.4 ir v0.5 studentai į "vargšiukus" ir "kietiakus" buvo skirstomi 
 ```
 Naudojamų įrašų kiekis      Deque            Vector              List
 
-10                          0.0057s          0.0059s             0.0058s
-100                         0.0146s          0.0257s             0.0180s
-1000                        0.1249s          0.2877s             0.1556s
-10000                       1.1046s          3.0022s             1.4461s
-100000                     10.3626s         31.0605s            13.5300s
+10                          0.0057s          0.0032s             0.0050s
+100                         0.0123s          0.0042s             0.0120s
+1000                        0.0621s          0.0221s             0.0591s
+10000                       0.3325s          0.1301s             0.3125s
+100000                      3.0097s          1.1985s             2.9600s
 ```
 
 **2 strategija** - Jei studentas yra vargšiukas, jis įkeliamas į naująjį "vargšiukų" konteinerį ir ištrinamas iš bendro studentai konteinerio. Po šio žingsnio studentai konteineryje lieka vien tik kietiakai.
@@ -76,11 +76,11 @@ Naudojamų įrašų kiekis      Deque            Vector              List
 ```
 Naudojamų įrašų kiekis      Deque            Vector              List
 
-10                          0.0060s          0.0063s             0.0055s
-100                         0.0173s          0.0221s             0.0171s
-1000                        0.1395s          0.2402s             0.1481s
-10000                       1.2709s          2.3364s             1.2971s
-100000                     11.7478s         24.2633s            11.9132s
+10                          0.0060s          0.0032s             0.0055s
+100                         0.0145s          0.0043s             0.0131s
+1000                        0.0667s          0.0236s             0.0632s
+10000                       0.3464s          0.1395s             0.3242s
+100000                      3.1185s          1.2724s             3.0120s
 ```
 
 ## Programos spartos analizė, pritaikius algoritmus, naudojant `std::vector` [v1.0]
@@ -88,11 +88,11 @@ Naudojamų įrašų kiekis      Deque            Vector              List
 ```
 Naudojamų įrašų kiekis      Be algoritmų       Su algoritmais
 
-10                          0.0060s            0.0063s
-100                         0.0290s            0.0221s
-1000                        0.8542s            0.2402s
-10000                      66.9470s            2.3364s
-100000                   6387.8300s            24.2633s
+10                          0.0042s            0.0032s
+100                         0.0045s            0.0043s
+1000                        0.0343s            0.0236s
+10000                       0.8038s            0.1395s
+100000                     54.0647s            1.2724s
 ```
 - Skiltyje "Be algoritmų" nurodyta programos sparta naudojant tik `vector.erase()` funkciją.
 
