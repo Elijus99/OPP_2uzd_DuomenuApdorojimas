@@ -46,13 +46,25 @@ Faile generuojamų įrašų kiekis      Programos veikimo laikas
 ## Konteinerių spartos analizė [v0.5]
 
 ```
-Naudojamų įrašų kiekis      Vector            List              Deque
+Konteineris      Naudojamų įrašų kiekis      Nuskaitymas       Rusiavimas
 
-10                          0.0043s           0.0041s           0.0042s
-100                         0.0053s           0.0045s           0.0052s
-1000                        0.0184s           0.0068s           0.0201s
-10000                       0.0995s           0.0257s           0.1012s
-100000                      0.8452s           0.2208s           0.8569s
+Vector           10                          0.0005s           0.0000s
+Vector           100                         0.0009s           0.0000s
+Vector           1000                        0.0043s           0.0000s
+Vector           10000                       0.0351s           0.0002s
+Vector           100000                      0.3633s           0.0021s
+
+Deque            10                          0.0005s           0.0000s
+Deque            100                         0.0008s           0.0000s
+Deque            1000                        0.0040s           0.0000s
+Deque            10000                       0.0364s           0.0005s
+Deque            100000                      0.3497s           0.0052s
+
+List             10                          0.0043s           0.0041s
+List             100                         0.0053s           0.0045s
+List             1000                        0.0184s           0.0068s
+List             10000                       0.0995s           0.0257s
+List             100000                      0.8452s           0.2208s
 ```
 
 ## Konteinerių spartos analizė [v1.0]
