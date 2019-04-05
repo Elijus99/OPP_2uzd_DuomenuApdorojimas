@@ -214,7 +214,7 @@ double galutinis(int egzaminas, string GType, int n, std::vector<int> nd)
 	return galutinis;
 }
 
-void isvedimas(std::vector<stud> ls, int VSize, int PSize, string GType)
+void isvedimas(std::vector<stud> ls, std::vector<stud> vargs, int VSize, int PSize, string GType)
 {
 	cout << "Vardas";
 	for (int i = 0; i < VSize; i++)
@@ -240,6 +240,10 @@ void isvedimas(std::vector<stud> ls, int VSize, int PSize, string GType)
 	for (int i = 0; i < ls.size(); i++)
 	{
 		cout << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
+	}
+	for (int i = 0; i < vargs.size(); i++)
+	{
+		cout << std::left << setw(VSize + 6) << vargs[i].vard << setw(PSize + 7) << vargs[i].pav << std::fixed << setprecision(2) << vargs[i].galutinis << endl;
 	}
 }
 bool exist(string fileName)

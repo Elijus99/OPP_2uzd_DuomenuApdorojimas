@@ -18,7 +18,7 @@ int main()
 	sort(vargs.begin(), vargs.end(), compareAlphabet);
 	end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> diff3 = end - start;
-	isvedimas(ls, VSize, PSize, GType);
+	isvedimas(ls, vargs, VSize, PSize, GType);
 	start = std::chrono::high_resolution_clock::now();
 	OutputToFiles(ls, vargs, GType, VSize, PSize);
 	end = std::chrono::high_resolution_clock::now();

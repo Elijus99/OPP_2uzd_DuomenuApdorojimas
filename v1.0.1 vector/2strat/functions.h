@@ -14,7 +14,7 @@ struct stud {
 
 void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize, std::chrono::duration<double> &diff1);
 double galutinis(int egzaminas, string GType, int n, std::vector<int> nd);
-void isvedimas(std::vector<stud> ls, int VSize, int PSize, string GType);
+void isvedimas(std::vector<stud> ls, std::vector<stud> vargs, int VSize, int PSize, string GType);
 bool exist(string fileName);
 bool compareAlphabet(const stud& a, const stud& b);
 double division(int a, int b);
