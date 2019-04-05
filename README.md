@@ -124,11 +124,11 @@ List            100000                      2.3251s          0.0324s            
 ```
 Naudojamų įrašų kiekis      Be algoritmų       Su algoritmais
 
-10                          0.0042s            0.0032s
-100                         0.0045s            0.0043s
-1000                        0.0343s            0.0236s
-10000                       0.8038s            0.1395s
-100000                     54.0647s            1.2724s
+10                          0.0235s            0.0272s
+100                         0.0330s            0.0352s
+1000                        0.0741s            0.0684s
+10000                       1.1543s            0.3330s
+100000                     89.8005s            2.9811s
 ```
 - Skiltyje "Be algoritmų" nurodyta programos sparta naudojant tik `vector.erase()` funkciją.
 
