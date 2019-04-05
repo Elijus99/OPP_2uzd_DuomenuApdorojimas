@@ -74,25 +74,49 @@ Versijose v0.4 ir v0.5 studentai į "vargšiukus" ir "kietiakus" buvo skirstomi 
 **1 strategija** - Tas pats studentas yra dvejuose konteineriuose: bendrame studentai ir viename iš suskaidytų (vargšiukai arba kietiakai).
 
 ```
-Naudojamų įrašų kiekis      Deque            Vector              List
+Konteineris     Naudojamų įrašų kiekis      Nuskaitymas      Rusiavimas          Rikiavimas      Isvedimas       Viso
 
-10                          0.0057s          0.0032s             0.0050s
-100                         0.0123s          0.0042s             0.0120s
-1000                        0.0621s          0.0221s             0.0591s
-10000                       0.3325s          0.1301s             0.3125s
-100000                      3.0097s          1.1985s             2.9600s
+Vector          10                          0.0186s          0.0000s             0.0000s         0.0072s         0.0259s
+Vector          100                         0.0216s          0.0000s             0.0000s         0.0090s         0.0307s      
+Vector          1000                        0.0428s          0.0006s             0.0004s         0.0166s         0.0658s      
+Vector          10000                       0.2492s          0.0039s             0.0061s         0.0725s         0.3319s
+Vector          100000                      2.3116s          0.0447s             0.0785s         0.5732s         3.0110s
+
+Deque           10                          0.0192s          0.0000s             0.0000s         0.0075s         0.0267s
+Deque           100                         0.0224s          0.0001s             0.0000s         0.0084s         0.0308s
+Deque           1000                        0.0439s          0.0003s             0.0005s         0.0163s         0.0642s
+Deque           10000                       0.2427s          0.0026s             0.0074s         0.1086s         0.3612s
+Deque           100000                      2.2807s          0.0280s             0.1026s         0.5981s         3.0093s
+
+List            10                          0.0184s          0.0000s             0.0000s         0.0082s         0.0266s
+List            100                         0.0237s          0.0001s             0.0000s         0.0083s         0.0321s
+List            1000                        0.0454s          0.0003s             0.0001s         0.0181s         0.0638s
+List            10000                       0.2446s          0.0023s             0.0023s         0.1177s         0.3669s
+List            100000                      2.3420s          0.0228s             0.0407s         0.5852s         2.9908s
 ```
 
 **2 strategija** - Jei studentas yra vargšiukas, jis įkeliamas į naująjį "vargšiukų" konteinerį ir ištrinamas iš bendro studentai konteinerio. Po šio žingsnio studentai konteineryje lieka vien tik kietiakai.
 
 ```
-Naudojamų įrašų kiekis      Deque            Vector              List
+Konteineris     Naudojamų įrašų kiekis      Nuskaitymas      Rusiavimas          Rikiavimas      Isvedimas       Viso
 
-10                          0.0060s          0.0032s             0.0055s
-100                         0.0145s          0.0043s             0.0131s
-1000                        0.0667s          0.0236s             0.0632s
-10000                       0.3464s          0.1395s             0.3242s
-100000                      3.1185s          1.2724s             3.0120s
+Vector          10                          0.0197s          0.0000s             0.0000s         0.0075s         0.0272s
+Vector          100                         0.0262s          0.0000s             0.0000s         0.0089s         0.0352s      
+Vector          1000                        0.0517s          0.0003s             0.0004s         0.0159s         0.0684s      
+Vector          10000                       0.2542s          0.0030s             0.0064s         0.0694s         0.3330s
+Vector          100000                      2.3035s          0.0354s             0.0820s         0.5603s         2.9811s
+
+Deque           10                          0.0190s          0.0000s             0.0000s         0.0080s         0.0271s
+Deque           100                         0.0211s          0.0000s             0.0000s         0.0086s         0.0298s
+Deque           1000                        0.0447s          0.0003s             0.0005s         0.0160s         0.0645s
+Deque           10000                       0.2605s          0.0029s             0.0068s         0.0712s         0.3414s
+Deque           100000                      2.2826s          0.0305s             0.0941s         0.5864s         2.9937s
+
+List            10                          0.0179s          0.0000s             0.0000s         0.0074s         0.0254s
+List            100                         0.0196s          0.0001s             0.0000s         0.0097s         0.0294s
+List            1000                        0.0476s          0.0003s             0.0001s         0.0169s         0.0649s
+List            10000                       0.2534s          0.0029s             0.0011s         0.0749s         0.3323s
+List            100000                      2.3251s          0.0324s             0.0286s         0.6864s         3.0725s
 ```
 
 ## Programos spartos analizė, pritaikius algoritmus, naudojant `std::vector` [v1.0]
