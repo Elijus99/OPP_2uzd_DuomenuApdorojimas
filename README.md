@@ -74,8 +74,8 @@ Versijose v0.4 ir v0.5 studentai į "vargšiukus" ir "kietiakus" buvo skirstomi 
 **1 strategija** - Tas pats studentas yra dvejuose konteineriuose: bendrame studentai ir viename iš suskaidytų (vargšiukai arba kietiakai).
 
 ```
-Konteineris     Naudojamų įrašų kiekis      Nuskaitymas      Rusiavimas          Rikiavimas      Isvedimas       Viso
-
+Konteineris     Naudojamų įrašų kiekis      Nuskaitymas+     Rusiavimas          Rikiavimas      Isvedimas       Viso
+                                  StudentList.txt generavimas
 Vector          10                          0.0186s          0.0000s             0.0000s         0.0072s         0.0259s
 Vector          100                         0.0216s          0.0000s             0.0000s         0.0090s         0.0307s      
 Vector          1000                        0.0428s          0.0006s             0.0004s         0.0166s         0.0658s      
@@ -98,8 +98,8 @@ List            100000                      2.3420s          0.0228s            
 **2 strategija** - Jei studentas yra vargšiukas, jis įkeliamas į naująjį "vargšiukų" konteinerį ir ištrinamas iš bendro studentai konteinerio. Po šio žingsnio studentai konteineryje lieka vien tik kietiakai.
 
 ```
-Konteineris     Naudojamų įrašų kiekis      Nuskaitymas      Rusiavimas          Rikiavimas      Isvedimas       Viso
-
+Konteineris     Naudojamų įrašų kiekis      Nuskaitymas+     Rusiavimas          Rikiavimas      Isvedimas       Viso
+                                    StudentList.txt generavimas
 Vector          10                          0.0197s          0.0000s             0.0000s         0.0075s         0.0272s
 Vector          100                         0.0262s          0.0000s             0.0000s         0.0089s         0.0352s      
 Vector          1000                        0.0517s          0.0003s             0.0004s         0.0159s         0.0684s      
